@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>youyaoqi</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div onclick="location.reload();" width="800px">
+    <img src = {{imgsrc}} style="position:absolute;top:5px;left:5px;right:5px;width:720px"/> 
+    </div>
+  </body>
+</html>
