@@ -5,8 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <div onclick="location.reload();" width="800px">
-    <img src = {{imgsrc}} style="position:absolute;top:5px;left:5px;right:5px;width:720px"/> 
+    <div width="800px">
+      <img src = {{imgsrc}} style="position:absolute;top:5px;left:5px;right:5px;width:735px">
+      <div onclick="location.href='/?button=prev';" style="position:absolute;left:0px;width:400px;height:100%;"></div>
+      <div onclick="location.href='/';" style="position:absolute;left:400px;width:400px;height:100%"></div> 
     </div>
   </body>
 </html>
