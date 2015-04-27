@@ -10,7 +10,7 @@ var browser = new Browser();
 browser.userAgent = 'Mozilla/5.0 (Linux; U; en-US) AppleWebKit/528.5+ (KHTML, like Gecko, Safari/528.5+) Version/4.0 Kindle/3.0 (screen 600×800; rotate)';
 
 // This is the page on youyaoqi from where you want to start reading.
-var starting_url = 'http://www.u17.com/chapter/351497.html';
+var starting_url = 'http://www.u17.com/chapter/353815.html';
 
 var check_page = function (callback) {
   return function() {
@@ -27,27 +27,22 @@ var check_page = function (callback) {
   }
 };
 
-async.series([
-  function (done) {
-    browser.visit(
-      starting_url,
-      check_page(
-        function(img) {
-          if (typeof img !== 'undefined') {
-            this.current_img = img;
-            this.all_imgs = [];
-            return true;
-          }
-          return false;
-        }
-      ),
-      function () {
-        console.log('[page loaded] ' + this.current_img.src);
-        done();
+browser.visit(
+  starting_url,
+  check_page(
+    function(img) {
+      if (typeof img !== 'undefined') {
+        this.current_img = img;
+        this.all_imgs = [];
+        return true;
       }
-    );
+      return false;
+    }
+  ),
+  function () {
+    console.log('[page loaded] ' + this.current_img.src);
   }
-]);
+);
 
 router.get('/', function (req, res) {
   if (typeof req.query.button == 'undefined') {
